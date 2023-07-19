@@ -31,7 +31,9 @@ public class Actividad01 {
             totalFisica = totalFisica + notasFisica[i];
 
         }
-
+        
+          
+        
         // comparar los promedios 
         promedioMatematica = totalMatematicas / notasMatematica.length;
         promedioFisica = totalFisica / notasFisica.length;

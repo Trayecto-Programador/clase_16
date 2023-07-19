@@ -35,7 +35,7 @@ public class Principal {
         nombres = new String[longitud];
 
         // carga de Datos
-        for (int i = 0; i < longitud; i++) {
+        for (int i = 0; i < sueldos.length; i++) {
             nombres[i] = JOptionPane.showInputDialog("Ingrese el nombre del empleado  " + (i + 1));
             sueldos[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el sueldo del empleado - " + (i + 1)));
         }
@@ -62,7 +62,9 @@ public class Principal {
         System.out.println("Ultimo Sueldo: " + sueldos[longitud - 1]);
 
         // Menor Sueldo
+        
         for (int i = 1; i < longitud; i++) {
+            
             menorSueldo = sueldos[0];
             if (menorSueldo > sueldos[i]) {
                 menorSueldo = sueldos[i];

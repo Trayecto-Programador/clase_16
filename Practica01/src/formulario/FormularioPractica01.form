@@ -27,9 +27,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReemplazarSueldo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnFinalizar" pref="88" max="32767" attributes="0"/>
+                      <Component id="btnFinalizar" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -54,14 +54,16 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="btnTotalSueldos" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMostrarTodo" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnPrimerSueldos" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnUltimoSueldo" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMenorSueldo" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMayorSueldo" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnPromdioSueldos" alignment="2" min="-2" pref="117" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="btnTotalSueldos" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMostrarTodo" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrimerSueldos" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMenorSueldo" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMayorSueldo" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPromdioSueldos" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="btnUltimoSueldo" linkSize="2" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -76,9 +78,7 @@
                       <Component id="lbEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="lbSueldo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="btnUltimoSueldo" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="btnMenorSueldo" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnMayorSueldo" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -92,6 +92,8 @@
                               <Component id="btnMostrarTodo" linkSize="1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnPrimerSueldos" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnUltimoSueldo" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
@@ -115,7 +117,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnReemplazarSueldo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnFinalizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -196,12 +198,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPromdioSueldosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton8">
+    <Component class="javax.swing.JButton" name="btnReemplazarSueldo">
       <Properties>
         <Property name="text" type="java.lang.String" value="REEMPLAZAR SUELDOS"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReemplazarSueldoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCantidadEmpleados">

@@ -4,12 +4,22 @@ public class FormularioPractica01 extends javax.swing.JFrame {
 
     int totalSueldos, longitud, cantidadEmpleados, mayorSueldo, menorSueldo;
     int[] sueldos = new int[5];
-    double promedio = 0;
     String[] nombres = new String[5];
     int indice = 0;
 
     public FormularioPractica01() {
         initComponents();
+        this.btnCantidadEmpleados.setEnabled(false);
+        this.btnCargar.setEnabled(true);
+        this.btnMayorSueldo.setEnabled(false);
+        this.btnMenorSueldo.setEnabled(false);
+        this.btnMostrarTodo.setEnabled(false);
+        this.btnPrimerSueldos.setEnabled(false);
+        this.btnPromdioSueldos.setEnabled(false);
+        this.btnTotalSueldos.setEnabled(false);
+        this.btnUltimoSueldo.setEnabled(false);
+        this.btnReemplazarSueldo.setEnabled(false);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -27,7 +37,7 @@ public class FormularioPractica01 extends javax.swing.JFrame {
         btnMayorSueldo = new javax.swing.JButton();
         btnCargar = new javax.swing.JButton();
         btnPromdioSueldos = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnReemplazarSueldo = new javax.swing.JButton();
         btnCantidadEmpleados = new javax.swing.JButton();
         btnTotalSueldos = new javax.swing.JButton();
         btnFinalizar = new javax.swing.JButton();
@@ -87,10 +97,10 @@ public class FormularioPractica01 extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("REEMPLAZAR SUELDOS");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnReemplazarSueldo.setText("REEMPLAZAR SUELDOS");
+        btnReemplazarSueldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnReemplazarSueldoActionPerformed(evt);
             }
         });
 
@@ -123,9 +133,9 @@ public class FormularioPractica01 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton8)
+                        .addComponent(btnReemplazarSueldo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                        .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -142,16 +152,20 @@ public class FormularioPractica01 extends javax.swing.JFrame {
                                 .addComponent(btnCantidadEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnTotalSueldos)
-                    .addComponent(btnMostrarTodo)
-                    .addComponent(btnPrimerSueldos)
-                    .addComponent(btnUltimoSueldo)
-                    .addComponent(btnMenorSueldo)
-                    .addComponent(btnMayorSueldo)
-                    .addComponent(btnPromdioSueldos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(btnTotalSueldos)
+                        .addComponent(btnMostrarTodo)
+                        .addComponent(btnPrimerSueldos)
+                        .addComponent(btnMenorSueldo)
+                        .addComponent(btnMayorSueldo)
+                        .addComponent(btnPromdioSueldos, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(btnUltimoSueldo, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnMayorSueldo, btnMenorSueldo, btnMostrarTodo, btnPrimerSueldos, btnPromdioSueldos, btnTotalSueldos, btnUltimoSueldo});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -161,9 +175,7 @@ public class FormularioPractica01 extends javax.swing.JFrame {
                         .addComponent(lbEmpleado)
                         .addGap(41, 41, 41)
                         .addComponent(lbSueldo)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnUltimoSueldo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(65, 65, 65)
                         .addComponent(btnMenorSueldo)
                         .addGap(18, 18, 18)
                         .addComponent(btnMayorSueldo)
@@ -175,7 +187,9 @@ public class FormularioPractica01 extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnMostrarTodo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnPrimerSueldos))
+                                .addComponent(btnPrimerSueldos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnUltimoSueldo))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(35, 35, 35)
@@ -192,7 +206,7 @@ public class FormularioPractica01 extends javax.swing.JFrame {
                             .addComponent(btnCantidadEmpleados))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8)
+                            .addComponent(btnReemplazarSueldo)
                             .addComponent(btnFinalizar))
                         .addGap(20, 20, 20))))
         );
@@ -209,6 +223,16 @@ public class FormularioPractica01 extends javax.swing.JFrame {
             indice++;
         } else {
             System.out.println("El vector esta completo");
+            this.btnCantidadEmpleados.setEnabled(true);
+            this.btnCargar.setEnabled(false);
+            this.btnMayorSueldo.setEnabled(true);
+            this.btnMenorSueldo.setEnabled(true);
+            this.btnMostrarTodo.setEnabled(true);
+            this.btnPrimerSueldos.setEnabled(true);
+            this.btnPromdioSueldos.setEnabled(true);
+            this.btnTotalSueldos.setEnabled(true);
+            this.btnUltimoSueldo.setEnabled(true);
+            this.btnReemplazarSueldo.setEnabled(true);
         }
 
     }//GEN-LAST:event_btnCargarActionPerformed
@@ -222,10 +246,10 @@ public class FormularioPractica01 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnReemplazarSueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReemplazarSueldoActionPerformed
         sueldos[1] = 75000;
         System.out.println("Nuevo sueldo empleado 2: " + sueldos[1]);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnReemplazarSueldoActionPerformed
 
     private void btnMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodoActionPerformed
         // Mostrar nomnina de Empleados
@@ -275,7 +299,8 @@ public class FormularioPractica01 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalSueldosActionPerformed
 
     private void btnPromdioSueldosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromdioSueldosActionPerformed
-        promedio = totalSueldos / cantidadEmpleados;
+        double promedio = 0;
+        promedio = totalSueldos / nombres.length;
         System.out.println("Promedio de Sueldos: " + promedio);
     }//GEN-LAST:event_btnPromdioSueldosActionPerformed
 
@@ -320,9 +345,9 @@ public class FormularioPractica01 extends javax.swing.JFrame {
     private javax.swing.JButton btnMostrarTodo;
     private javax.swing.JButton btnPrimerSueldos;
     private javax.swing.JButton btnPromdioSueldos;
+    private javax.swing.JButton btnReemplazarSueldo;
     private javax.swing.JButton btnTotalSueldos;
     private javax.swing.JButton btnUltimoSueldo;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel lbEmpleado;
     private javax.swing.JLabel lbSueldo;
     private javax.swing.JTextField txtNombre;
